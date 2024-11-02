@@ -123,44 +123,58 @@ a {
 .header .container img {
     width: 200px;
 }
+@media (max-width: 767px) {
+    .header .container img {
+        width: 150px;
+    }
+}
 .header .container .nav {
     flex: 1;
     display: flex;
     justify-content: flex-end;
     align-items: center;
 }
-.header .container .nav .toggle-menu {
+.header .container .nav label .toggle-menu {
     color: #ffffff;
     font-size: 25px;
     display: none;
     transition: .3s;
 }
-.header .container .nav ul {
+.header .container .nav label ul {
     display: flex;
     margin: 0;
     padding: 0;
 }
+.header .container .nav label input[type="checkbox"] {
+    display: none;
+}
 @media (max-width: 992px) {
-    .header .container .nav .toggle-menu {
-        display: block;
+    .header .container .nav label {
+        position: relative;
     }
-    .header .container .nav ul {
-        display: none;
+    .header .container .nav label input[type="checkbox"] {
+        width: 0;
+        position: absolute;
     }
-    .header .container .nav .toggle-menu:hover + ul {
-        background-color: #0000008b;
+    .header .container .nav input[type="checkbox"]:checked ~ ul {
+        background-color: #000000c6;
         display: flex;
         flex-direction: column;
         position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
+        width: 340px;
+        right: -70px;
         text-align: center;
         padding-top: 30px;
-        box-shadow: 0px 40px 30px 30px #0000008b;
+        box-shadow: 0px 40px 30px 30px #000000c6;
     }
-    .header .container .nav .toggle-menu:hover + ul a {
+    .header .container .nav input[type="checkbox"]:checked ~ ul a {
         padding: 20px 0 0 0;
+    }
+    .header .container .nav label .toggle-menu {
+        display: block;
+    }
+    .header .container .nav label ul {
+        display: none;
     }
 }
 .header .container ul li a {
@@ -269,6 +283,11 @@ a {
 }
 .landing .change-right {
     right: 30px;
+}
+@media (max-width: 767px) {
+    .landing .change {
+        display: none;
+    }
 }
 .landing .bullets {
     display: flex;
@@ -391,6 +410,11 @@ a {
         margin: 0 0 0 30px;
     }
 }
+@media (max-width: 767px) {
+    .design .text {
+        padding: 50px 40px;
+    }
+}
 /* end design */
 /* start portfolio */
 .portfolio {
@@ -414,6 +438,15 @@ a {
     background-color: var(--main-color);
     color: #ffffff;
     cursor: pointer;
+}
+@media (max-width: 767px) {
+    .portfolio .filter ul {
+        display: block;
+    }
+    .portfolio .filter ul li {
+        font-size: 13px;
+        padding: 10px 0;
+    }
 }
 .portfolio .images-container {
     margin: 50px 0;
